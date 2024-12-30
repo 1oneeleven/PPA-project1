@@ -7,3 +7,5 @@ Created on Fri Nov 29 16:48:27 2024
 """
 
 print ("hello world")
+
+print ("this is my 2nd commit")
