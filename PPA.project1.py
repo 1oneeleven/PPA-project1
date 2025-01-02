@@ -20,10 +20,12 @@ window.geometry ("414x896") #set similar dimensions/resolutions as ios apple iph
 window.geometry ("1440x900") #set similar dimensions/resolutions as my apple macbook pro 13 inch.
 """
 
-label = gui.Label (window, text = "Welcome to Winter Cafe!")
+#set a welcome message and slogan for my winter cafe with font and font size
+label = gui.Label (window, text = "Welcome to Winter Cafe!", font = ("Times", 18 ))
 label.pack() 
-label = gui.Label (window, text = "Not all our coffees are cold this winter ;)")
+label = gui.Label (window, text = "Not all our coffees are cold this winter ;)", font =("times"))
 label.pack()
+
 def eat_in_screen ():
     label.config (text="please choose your order for eating in")
     window.title("In Cafe Menu")
