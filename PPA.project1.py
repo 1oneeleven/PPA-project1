@@ -10,11 +10,15 @@ Created on Fri Nov 29 16:48:27 2024
 
 
 #import tkinter with an alias
-import tkinter as tk
+import tkinter as gui
 
-window = tk.Tk ()  #TK () method to initialise a main window
+window = gui.Tk ()  #TK () method to initialise a main window
 window.title ("winter cafe")  # set title
-window.geometry ("340x675") #set similar dimensions as an apple iphone device.
+window.geometry ("414x896") #set similar dimensions/resolutions as ios apple iphone 15 pro max
+
+"""
+window.geometry ("1440x900") #set similar dimensions/resolutions as my apple macbook pro 13 inch.
+"""
 
 
 
