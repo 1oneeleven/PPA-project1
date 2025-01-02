@@ -6,27 +6,20 @@ Created on Fri Nov 29 16:48:27 2024
 @author: alialshehhi
 """
 
-'''
-print ("hello world")
-
-print ("this is my 2nd commit")
-
-print ("this is my 3rd test to commit and push my code")
-'''
-
-
 #the following code is my FC723 portflio task 1
 
 
 #import tkinter with an alias
-import tkinter as GUI
+import tkinter as tk
 
-window = GUI.TK ()  #TK () method to initialise a main window
+window = tk.Tk ()  #TK () method to initialise a main window
 window.title ("winter cafe")  # set title
-window.geometry ("400x800")
+window.geometry ("340x675") #set similar dimensions as an apple iphone device.
 
 
 
+
+#mainloop() to launch the window.
 window.mainloop()
 
 
