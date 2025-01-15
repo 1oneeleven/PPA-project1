@@ -45,6 +45,8 @@ class Wintercafe:
         
     '''
         pass
+    
+#________________________________ function for eating in ________________________________
 
 def eat_in_screen ():
             
@@ -52,36 +54,44 @@ def eat_in_screen ():
         label.config (text="please choose your order for eating in")
         label.place (x=50,y=200)
         window.title("In Cafe Menu")
-
-eat_in_button = tk.Button (window, text = "Eat In", command = eat_in_screen)
-eat_in_button.place (x = 200, y = 50)
-eat_in_button.pack()
         
 
+eat_in_button = tk.Button (window, text = "Eat In", command = eat_in_screen)
+eat_in_button.grid(row=1,column=0, padx=50, pady=10)
+
+        
+
+#________________________________ function for take out ________________________________ 
 
 def take_out_screen():
         label.config (text="please choose your order for eating out")
+        label.place (x=50,y=200)
         window.title("Take Out Menu")
+      
 
     
 take_out_button = tk.Button (window, text = "Take Out", command = take_out_screen)
-take_out_button.place (x = 300 , y = 50 )
-take_out_button.pack()
-
-        
-
-confirm_order_button = tk.button (order_summary_window, text= "confirm order", order_summary_window.destroy)
+take_out_button.grid(row=1,column=1, padx=20, pady=10)
 
 
+def review_order_screen():
+    
+    pass
+
+    
+
+#ttk.button (order_summary_window, text= "confirm order", order_summary_window.destroy)
+
+"""
 def barista_window (s):
     
-    
+        
             
     from barista_statement import barista_order_summary
         
   
         
-       
+       """
         
     
     
