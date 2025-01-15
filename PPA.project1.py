@@ -53,8 +53,9 @@ def eat_in_screen ():
       
         window.title("In Cafe Menu")
         
-
+#add a button to take the user to the eat in menu
 eat_in_button = tk.Button (window, text = "Eat In", command = eat_in_screen)
+#configure the button to be placed in horizontally next to the take out button
 eat_in_button.grid(row=2,column=1, padx=10, pady=40)
 
 #________________________________ function for take out ________________________________ 
@@ -66,8 +67,9 @@ def take_out_screen():
         window.title("Take Out Menu")
       
 
-    
+#add a button to take the user to the take out menu
 take_out_button = tk.Button (window, text = "Take Out", command = take_out_screen)
+#configure the button to be placed in horizontally next to the eat in button
 take_out_button.grid(row=2,column=3, padx=20, pady=40)
 
 
