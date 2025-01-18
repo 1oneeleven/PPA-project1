@@ -14,6 +14,9 @@ import tkinter as tk
 from tkinter import ttk
 
 
+from barista_statement import barista_order_summary
+
+
 
 
 window = tk.Tk ()  #TK () method to initialise a main window
@@ -24,12 +27,19 @@ window.geometry ("400x400") #set to standard geometry
 #create widget with label title, set a welcome message and slogan for my winter cafe with font and font size
 #Pack a label of the title with a couple of arguments.
 title_label = ttk.Label (master = window, text = "Welcome to Winter cafe!", font = ("Times, 20 bold")) 
-title_label.grid(row=0,column=2, pady=10)
+title_label.place (x=100, y=100)
 
 label = ttk.Label (window, text = "Not all our coffees are cold this winter ;)", font =("times"))
-label.grid(row=1,column=2, pady=10)
+label.place (x=100, y = 150)
 
-#---------
+
+#emplty variable for list which will add orders in a dictionary format
+Barista_orders = []
+
+
+
+#________________________________ class testing  ________________________________
+
 
 class Wintercafe:
     def dining_preference (self):
@@ -46,6 +56,7 @@ class Wintercafe:
     
 #________________________________ function for eating in ________________________________
 
+#create a function for append option for eating in the cafe
 def eat_in_screen ():
             
         
@@ -56,7 +67,10 @@ def eat_in_screen ():
 #add a button to take the user to the eat in menu
 eat_in_button = tk.Button (window, text = "Eat In", command = eat_in_screen)
 #configure the button to be placed in horizontally next to the take out button
-eat_in_button.grid(row=2,column=1, padx=10, pady=40)
+#eat_in_button.grid(row=2,column=1, padx=10, pady=40)
+eat_in_button.place (x=100, y= 200)
+
+
 
 #________________________________ function for take out ________________________________ 
 
@@ -70,27 +84,19 @@ def take_out_screen():
 #add a button to take the user to the take out menu
 take_out_button = tk.Button (window, text = "Take Out", command = take_out_screen)
 #configure the button to be placed in horizontally next to the eat in button
-take_out_button.grid(row=2,column=3, padx=20, pady=40)
+take_out_button.place (x=300, y=200)
 
 
-def review_order_screen():
+def barista_window():
     
-    pass
+    
+    return barista_order_summary
+
 
     
 
 #ttk.button (order_summary_window, text= "confirm order", order_summary_window.destroy)
 
-"""
-def barista_window (s):
-    
-        
-            
-    from barista_statement import barista_order_summary
-        
-  
-        
-       """
         
     
     

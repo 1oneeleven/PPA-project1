@@ -8,3 +8,4 @@ Created on Sun Jan 12 03:58:21 2025
 
 def barista_order_summary():
     
+    print("")
