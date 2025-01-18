@@ -34,9 +34,18 @@ label.place (x=100, y = 150)
 
 
 #emplty variable for list which will add orders in a dictionary format
-Barista_orders = []
+barista_orders_list = []
 
 
+#add a button to take the user to the eat in menu
+eat_in_button = tk.Button (window, text = "Eat In", command = eat_in_screen)
+#configure the button to be placed in horizontally next to the take out button
+eat_in_button.place (x=100, y= 200)
+
+#add a button to take the user to the take out menu
+take_out_button = tk.Button (window, text = "Take Out", command = take_out_screen)
+#configure the button to be placed in horizontally next to the eat in button
+take_out_button.place (x=300, y=200)
 
 #________________________________ class testing  ________________________________
 
@@ -59,16 +68,15 @@ class Wintercafe:
 #create a function for append option for eating in the cafe
 def eat_in_screen ():
             
-        
-        label.config (text="please choose your order for eating in", font = ("Times, 15 bold"))
-      
         window.title("In Cafe Menu")
+        label.config (text="please enter your name for your order:", font = ("Times, 15 bold"))
+        person_name = tk.entry.get ()
+        barista_order = { "order_name" : person_name,
+                          "order type" : "eat in"
+                        }  
+        barista_orders_list.append (barista_order)
         
-#add a button to take the user to the eat in menu
-eat_in_button = tk.Button (window, text = "Eat In", command = eat_in_screen)
-#configure the button to be placed in horizontally next to the take out button
-#eat_in_button.grid(row=2,column=1, padx=10, pady=40)
-eat_in_button.place (x=100, y= 200)
+        return 
 
 
 
@@ -81,10 +89,7 @@ def take_out_screen():
         window.title("Take Out Menu")
       
 
-#add a button to take the user to the take out menu
-take_out_button = tk.Button (window, text = "Take Out", command = take_out_screen)
-#configure the button to be placed in horizontally next to the eat in button
-take_out_button.place (x=300, y=200)
+
 
 
 def barista_window():
