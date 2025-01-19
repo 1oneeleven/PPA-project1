@@ -12,10 +12,7 @@ Created on Fri Nov 29 16:48:27 2024
 #import tkinter with an alias
 import tkinter as tk
 from tkinter import ttk
-
-
 #from barista_statement import barista_order_summary
-
 
 
 
@@ -30,7 +27,7 @@ title_label = ttk.Label (master = window, text = "Welcome to Winter cafe!", font
 title_label.place (x=125, y=50)
 
 label = ttk.Label (window, text = "Not all our coffees are cold this winter ;)", font =("times, 20"))
-label.place (x=100, y = 100)
+label.place (x=85, y = 75)
 
 
 
@@ -42,55 +39,57 @@ barista_orders_list = []
 
 
 
-#________________________________ class testing  ________________________________
-
-
-class Wintercafe:
-    def dining_preference (self):
-        '''
-        self.window = window
-        self.window.title = "Winter Cafe"
-        self.button.text = "eat in"
-        self.button.pack ()
-        self.button.text = "take out"
-        self.button.pack ()
-        
-    '''
-        pass
-    
 #________________________________ function for eating in ________________________________
 
 #create a function for append option for eating in the cafe
 def eat_in_screen ():
-            
+        global barista_order_list
     
+    
+        #close the main window
         window.destroy ()
+        
+        #create a second window for the menu
         eat_in_window = tk.Tk ()
+        eat_in_window.geometry ("500x400")
+        eat_in_window.title("In Cafe Menu")
+
+        #message to input name for the order
+        order_name = tk.Label (text="please enter your name for your order:", font=("Times, 15"))
+        order_name.place (x=90, y = 50)
+        
+        #create an entry widget for the user to enter their name in
+        name_entry = ttk.Entry(eat_in_window, width=30)
+        name_entry.place(x=90, y=100)
+        
+        
+        def confirm_order(): 
+            person_name = name_entry.get()
+            
+            #if statement to check that the user has entered their name
+            if person_name: 
+                #append the name into a dictionary that corresponds with eating in
+                barista_order = { "order_name" : person_name,
+                                 "order type" : "Eat In" 
+                                 #"drinks" : drinks_list
+                                 
+                                 }
+                #add order to a list 
+                barista_orders_list.append (barista_order)
+            
+            
+            else:
+                invalid_message.config(text="You must enter you name to confirm you order!")
+                
+            
+            
+        confirm_order_button = tk.Button(eat_in_window, text="confirm_order", command=confirm_order, font=("times", 12))
+        confirm_order_button.place(x=90, y=350)
+            
+        invalid_message = tk.Label (text="", font=("Times, 15"), fg= "red")
+        invalid_message.place (x=90, y=300)
+            
         eat_in_window.mainloop ()
-        
-        eat_in_window.title("Eat in Menu")
-        title_label.cofig (text="")
-      
-        window.title("In Cafe Menu")
-        title_label.cofig (text="")
-        label.config (text="please enter your name for your order:", font = ("Times, 15 bold"))
-        #get the the name of the person ordering
-        
-        name_entry = ttk.Entry(window, width=30)
-        name_entry.place(x=100, y=250)
-        
-        person_name = tk.entry.get ()
-        
-        #append the name into a dictionary that corresponds with eating in
-        barista_order = { "order_name" : person_name,
-                          "order type" : "Eat In" }
-                        
-        barista_orders_list.append (barista_order)
-        
-        
-        
-        
-        
         return 
 
 
@@ -99,30 +98,53 @@ def eat_in_screen ():
 
 def take_out_screen():
         
+        global barista_order_list
+    
+    
+        #close the main window
         window.destroy ()
+        
+        #create a second window for the menu
         take_out_window = tk.Tk ()
-       
+        take_out_window.geometry ("500x400")
         take_out_window.title("Take Out Menu")
-        title_label.cofig (text="")
-        take_out_window.geometry ("400x400")
+
+        #message to input name for the order
+        order_name = tk.Label (text="please enter your name for your order:", font=("Times, 15"))
+        order_name.place (x=90, y = 50)
         
-        label.config (text="please choose your order for eating out", font = ("Times, 15 bold"))
-        
-        #get the the name of the person ordering
-        person_name = tk.entry.get ()
-        
-        #append the name into a dictionary that corresponds with eating in
-        barista_order = { "order_name" : person_name,
-                          "order type" : "Take Out" }
-                        
-        barista_orders_list.append (barista_order)
-        
-        #onfirm_order_button = tk.button (take_out_window, text = "Take Out", command = take_out_screen)
+        #create an entry widget for the user to enter their name in
+        name_entry = ttk.Entry(take_out_window, width=30)
+        name_entry.place(x=90, y=100)
         
         
-        
-        
-        
+        def confirm_order(): 
+            person_name = name_entry.get()
+            
+            #if statement to check that the user has entered their name
+            if person_name: 
+                #append the name into a dictionary that corresponds with eating in
+                barista_order = { "order_name" : person_name,
+                                 "order type" : "Eat In" 
+                                 #"drinks" : drinks_list
+                                 
+                                 }
+                #add order to a list 
+                barista_orders_list.append (barista_order)
+            
+            
+            else:
+                invalid_message.config(text="You must enter you name to confirm you order!")
+                
+            
+            
+        confirm_order_button = tk.Button(take_out_window, text="confirm_order", command=confirm_order, font=("times", 12))
+        confirm_order_button.place(x=90, y=350)
+            
+        invalid_message = tk.Label (text="", font=("Times, 15"), fg= "red")
+        invalid_message.place (x=90, y=340)
+                  
+   
         take_out_window.mainloop ()
         return 
 
