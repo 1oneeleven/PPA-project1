@@ -14,24 +14,28 @@ import tkinter as tk
 from tkinter import ttk
 
 
-from barista_statement import barista_order_summary
+#from barista_statement import barista_order_summary
 
 
 
 
 window = tk.Tk ()  #TK () method to initialise a main window
 window.title ("Winter cafe")  # set title
-window.geometry ("400x400") #set to standard geometry 
+window.geometry ("500x400") #set to standard geometry 
 
 
 #create widget with label title, set a welcome message and slogan for my winter cafe with font and font size
 #Pack a label of the title with a couple of arguments.
-title_label = ttk.Label (master = window, text = "Welcome to Winter cafe!", font = ("Times, 20 bold")) 
-title_label.place (x=100, y=100)
+title_label = ttk.Label (master = window, text = "Welcome to Winter cafe!", font = ("Times, 24 bold")) 
+title_label.place (x=125, y=50)
 
-label = ttk.Label (window, text = "Not all our coffees are cold this winter ;)", font =("times"))
-label.place (x=100, y = 150)
+label = ttk.Label (window, text = "Not all our coffees are cold this winter ;)", font =("times, 20"))
+label.place (x=100, y = 100)
 
+
+
+order_preference = ttk.Label (window, text = "Would you like to Eat in or Take Away?", font =("times, 20"))
+order_preference.place (x=50, y = 160)
 
 #emplty variable for list which will add orders in a dictionary format
 barista_orders_list = []
@@ -61,16 +65,20 @@ def eat_in_screen ():
             
     
         window.destroy ()
-        take_out_window = tk.Tk ()
-        take_out_window.mainloop ()
+        eat_in_window = tk.Tk ()
+        eat_in_window.mainloop ()
         
-        window.title("TEat in Menu")
+        eat_in_window.title("Eat in Menu")
         title_label.cofig (text="")
       
         window.title("In Cafe Menu")
         title_label.cofig (text="")
         label.config (text="please enter your name for your order:", font = ("Times, 15 bold"))
         #get the the name of the person ordering
+        
+        name_entry = ttk.Entry(window, width=30)
+        name_entry.place(x=100, y=250)
+        
         person_name = tk.entry.get ()
         
         #append the name into a dictionary that corresponds with eating in
@@ -112,22 +120,22 @@ def take_out_screen():
         #onfirm_order_button = tk.button (take_out_window, text = "Take Out", command = take_out_screen)
         
         
+        
+        
+        
         take_out_window.mainloop ()
-        
-        
-        
         return 
 
 
 #add a button to take the user to the eat in menu
-eat_in_button = tk.Button (window, text = "Eat In", command = eat_in_screen)
+eat_in_button = tk.Button (window, text = "Eat In", width=15, height=3, font = ("Calibri, 16"), command = eat_in_screen)
 #configure the button to be placed in horizontally next to the take out button
-eat_in_button.place (x=100, y= 200)
+eat_in_button.place (x=50, y= 200) 
 
 #add a button to take the user to the take out menu
-take_out_button = tk.Button (window, text = "Take Out", command = take_out_screen)
+take_out_button = tk.Button (window, text = "Take Out", width=15, height=3, font = ("Calibri, 16"),command = take_out_screen)
 #configure the button to be placed in horizontally next to the eat in button
-take_out_button.place (x=300, y=200)
+take_out_button.place (x=275, y=200)
 
 
 
