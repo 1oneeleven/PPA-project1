@@ -8,4 +8,6 @@ Created on Sun Jan 12 03:58:21 2025
 
 def barista_order_summary():
     
-    print(f"{person_name} has ordered {order_summary} for {total_amount}"
+    print(f"{person_name} has ordered {order_summary} ")
+    
+    return 

@@ -12,7 +12,7 @@ Created on Fri Nov 29 16:48:27 2024
 #import tkinter with an alias
 import tkinter as tk
 from tkinter import ttk
-#from barista_statement import barista_order_summary
+from barista_statement import barista_order_summary
 
 
 
@@ -225,16 +225,19 @@ def take_out_screen():
 
 
 #add a button to take the user to the eat in menu
-eat_in_button = tk.Button (window, text = "Eat In", width=15, height=3, font = ("Calibri, 16"), command = eat_in_screen)
+eat_in_button = tk.Button (window, text = "Eat In", width=15, height=3, font = ("Times, 16"), command = eat_in_screen)
 #configure the button to be placed in horizontally next to the take out button
 eat_in_button.place (x=50, y= 200) 
 
 #add a button to take the user to the take out menu
-take_out_button = tk.Button (window, text = "Take Out", width=15, height=3, font = ("Calibri, 16"),command = take_out_screen)
+take_out_button = tk.Button (window, text = "Take Out", width=15, height=3, font = ("Times, 16"),command = take_out_screen)
 #configure the button to be placed in horizontally next to the eat in button
 take_out_button.place (x=275, y=200)
 
 
+
+#code to check if the statement is for the barista is imported
+print (barista_order_summary)
 
 
         
