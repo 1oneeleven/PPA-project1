@@ -63,6 +63,10 @@ def eat_in_screen ():
         name_entry.place(x=90, y=100)
         
         
+            
+        
+     
+        
         def confirm_order(): 
             person_name = name_entry.get()
             
@@ -76,22 +80,30 @@ def eat_in_screen ():
                                  }
                 #add order to a list 
                 barista_orders_list.append (barista_order)
-            
-            
-            else:
-                invalid_message.config(text="You must enter you name to confirm you order!")
                 
             
             
-        confirm_order_button = tk.Button(eat_in_window, text="confirm_order", command=confirm_order, font=("times", 12))
-        confirm_order_button.place(x=90, y=350)
+            else:
+                invalid_message.config(text="You must enter your name to confirm you order!")
+                
             
+        #create a confirm order button to confirm and append the orders to a dictionary.
+        confirm_order_button = tk.Button(eat_in_window, text="confirm_order", command=confirm_order, font=("times", 12))
+        confirm_order_button.place(x=200, y=350)
+          
+        #invalid or error message for user if the name is not entered
         invalid_message = tk.Label (text="", font=("Times, 15"), fg= "red")
         invalid_message.place (x=90, y=300)
-            
+           
+        
+        
+        
+        #initialise the eat in window 
         eat_in_window.mainloop ()
         return 
-
+        
+        
+            
 
 
 #________________________________ function for take out ________________________________ 
@@ -134,17 +146,20 @@ def take_out_screen():
             
             
             else:
-                invalid_message.config(text="You must enter you name to confirm you order!")
+                invalid_message.config(text="You must enter your name to confirm you order!")
                 
             
-            
+        #create a confirm order button to confirm and append the orders to a dictionary.    
         confirm_order_button = tk.Button(take_out_window, text="confirm_order", command=confirm_order, font=("times", 12))
-        confirm_order_button.place(x=90, y=350)
+        confirm_order_button.place(x=200, y=350)
             
+        
+        #invalid or error message for user if the name is not entered
         invalid_message = tk.Label (text="", font=("Times, 15"), fg= "red")
         invalid_message.place (x=90, y=340)
                   
-   
+        
+        #initialise the take out window
         take_out_window.mainloop ()
         return 
 
