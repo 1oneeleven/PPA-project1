@@ -79,7 +79,11 @@ def eat_in_screen ():
         Hot_chocolate = tk.Label (text="Hot chocolate - $3.0", font=("Times, 15"))
         Hot_chocolate.place (x=90, y = 350)
         
-       
+        order_entry_label = tk.Label (text="Please enter your order in the box bellow:", font=("Times, 15"))
+        order_entry_label.place (x=90, y = 400)
+        
+        order_entry = ttk.Entry(eat_in_window, width=30)
+        order_entry.place(x=90, y=450)
        
                     
                     
@@ -98,22 +102,29 @@ def eat_in_screen ():
                 #add order to a list 
                 barista_orders_list.append (barista_order)
                 
+                
             
             
             else:
                 invalid_message.config(text="You must enter your name to confirm you order!")
                 
+            if order_confirmed_message:
+                order_confirmed_message.config(text="you may proceed to the counter for payment:)")
             
             
         #create a confirm order button to confirm and append the orders to a dictionary.
         confirm_order_button = tk.Button(eat_in_window, text="confirm_order", command=confirm_order, font=("times", 12))
-        confirm_order_button.place(x=200, y=450)
+        confirm_order_button.place(x=200, y=500)
           
         #invalid or error message for user if the name is not entered
         invalid_message = tk.Label (text="", font=("Times, 15"), fg= "red")
-        invalid_message.place (x=90, y=300)
-           
+        invalid_message.place (x=90, y=550)
         
+        #message for to confirm order
+        order_confirmed_message = tk.Label (text="", font=("Times, 15"))
+        order_confirmed_message.place (x=90, y=550)
+           
+  
         
         
         #initialise the eat in window 
@@ -148,6 +159,31 @@ def take_out_screen():
         name_entry.place(x=90, y=100)
         
         
+        #create list for menu items with (items: price) as labels 
+        Latte = tk.Label (text="Latte - $3.0", font=("Times, 15"))
+        Latte.place (x=90, y = 150)
+        
+        Tea = tk.Label (text="Tea - $3.0", font=("Times, 15"))
+        Tea.place (x=90, y = 200)
+        
+        Mocha = tk.Label (text="Mocha - $3.0", font=("Times, 15"))
+        Mocha.place (x=90, y = 250)
+        
+        Matcha = tk.Label (text="Matcha - $3.5", font=("Times, 15"))
+        Matcha.place (x=90, y = 300)
+        
+        Hot_chocolate = tk.Label (text="Hot chocolate - $3.0", font=("Times, 15"))
+        Hot_chocolate.place (x=90, y = 350)
+        
+        order_entry_label = tk.Label (text="Please enter your order in the box bellow:", font=("Times, 15"))
+        order_entry_label.place (x=90, y = 400)
+        
+        order_entry = ttk.Entry(take_out_window, width=30)
+        order_entry.place(x=90, y=450)
+       
+                    
+                    
+        
         def confirm_order(): 
             person_name = name_entry.get()
             
@@ -166,15 +202,21 @@ def take_out_screen():
             else:
                 invalid_message.config(text="You must enter your name to confirm you order!")
                 
+            if order_confirmed_message:
+                order_confirmed_message.config(text="you may proceed to the counter for payment:)")
             
-        #create a confirm order button to confirm and append the orders to a dictionary.    
+            
+        #create a confirm order button to confirm and append the orders to a dictionary.
         confirm_order_button = tk.Button(take_out_window, text="confirm_order", command=confirm_order, font=("times", 12))
-        confirm_order_button.place(x=200, y=350)
-            
-        
+        confirm_order_button.place(x=200, y=500)
+          
         #invalid or error message for user if the name is not entered
         invalid_message = tk.Label (text="", font=("Times, 15"), fg= "red")
-        invalid_message.place (x=90, y=340)
+        invalid_message.place (x=90, y=550)
+        
+        #message for to confirm order
+        order_confirmed_message = tk.Label (text="", font=("Times, 15"))
+        order_confirmed_message.place (x=90, y=550)
                   
         
         #initialise the take out window
