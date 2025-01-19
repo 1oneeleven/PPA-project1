@@ -62,33 +62,27 @@ def eat_in_screen ():
         name_entry = ttk.Entry(eat_in_window, width=30)
         name_entry.place(x=90, y=100)
         
-        #create OOP for menu items with (items: price)
-        class CafeMenu:
-            def __init__(self, menu):
-                self.menu = {
-                    "Latte": 3.0,
-                    "Iced Latte": 3.5,
-                    "Mocha": 3.0,
-                    "Cappuchino":3.0,
-                    "Tea": 2.5,
-                    "Matcha":3.5,
-                    "Hot Chocolate"
-                    "Sandwich": 5.0,
-                    "Cake": 4.0,
-                    "Brownie":4.0
-                } 
-    
         
-                
-       def eat_in_menu (self):
-           tk.Label (self.master, text ="Menu", font=("times, 15")).pack (side="left")
-                
-           self.ordering = {}
-           for item, price in self.menu():
-               frame - tk.frame (self.menu)
-               frame.place(x=90, y=120)
-               
-               
+        #create list for menu items with (items: price) as labels 
+        Latte = tk.Label (text="Latte - $3.0", font=("Times, 15"))
+        Latte.place (x=90, y = 150)
+        
+        Tea = tk.Label (text="Tea - $3.0", font=("Times, 15"))
+        Tea.place (x=90, y = 200)
+        
+        Mocha = tk.Label (text="Mocha - $3.0", font=("Times, 15"))
+        Mocha.place (x=90, y = 250)
+        
+        Matcha = tk.Label (text="Matcha - $3.5", font=("Times, 15"))
+        Matcha.place (x=90, y = 300)
+        
+        Hot_chocolate = tk.Label (text="Hot chocolate - $3.0", font=("Times, 15"))
+        Hot_chocolate.place (x=90, y = 350)
+        
+       
+       
+                    
+                    
         
         def confirm_order(): 
             person_name = name_entry.get()
@@ -110,9 +104,10 @@ def eat_in_screen ():
                 invalid_message.config(text="You must enter your name to confirm you order!")
                 
             
+            
         #create a confirm order button to confirm and append the orders to a dictionary.
         confirm_order_button = tk.Button(eat_in_window, text="confirm_order", command=confirm_order, font=("times", 12))
-        confirm_order_button.place(x=200, y=350)
+        confirm_order_button.place(x=200, y=450)
           
         #invalid or error message for user if the name is not entered
         invalid_message = tk.Label (text="", font=("Times, 15"), fg= "red")
