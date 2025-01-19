@@ -18,7 +18,7 @@ from tkinter import ttk
 
 window = tk.Tk ()  #TK () method to initialise a main window
 window.title ("Winter cafe")  # set title
-window.geometry ("500x400") #set to standard geometry 
+window.geometry ("500x600") #set to standard geometry 
 
 
 #create widget with label title, set a welcome message and slogan for my winter cafe with font and font size
@@ -26,7 +26,7 @@ window.geometry ("500x400") #set to standard geometry
 title_label = ttk.Label (master = window, text = "Welcome to Winter cafe!", font = ("Times, 24 bold")) 
 title_label.place (x=125, y=50)
 
-label = ttk.Label (window, text = "Not all our coffees are cold this winter ;)", font =("times, 20"))
+label = ttk.Label (window, text = "Not all our drinks are cold this winter ;)", font =("times, 20"))
 label.place (x=85, y = 75)
 
 
@@ -51,7 +51,7 @@ def eat_in_screen ():
         
         #create a second window for the menu
         eat_in_window = tk.Tk ()
-        eat_in_window.geometry ("500x400")
+        eat_in_window.geometry ("500x600")
         eat_in_window.title("In Cafe Menu")
 
         #message to input name for the order
@@ -62,10 +62,33 @@ def eat_in_screen ():
         name_entry = ttk.Entry(eat_in_window, width=30)
         name_entry.place(x=90, y=100)
         
+        #create OOP for menu items with (items: price)
+        class CafeMenu:
+            def __init__(self, menu):
+                self.menu = {
+                    "Latte": 3.0,
+                    "Iced Latte": 3.5,
+                    "Mocha": 3.0,
+                    "Cappuchino":3.0,
+                    "Tea": 2.5,
+                    "Matcha":3.5,
+                    "Hot Chocolate"
+                    "Sandwich": 5.0,
+                    "Cake": 4.0,
+                    "Brownie":4.0
+                } 
+    
         
-            
-        
-     
+                
+       def eat_in_menu (self):
+           tk.Label (self.master, text ="Menu", font=("times, 15")).pack (side="left")
+                
+           self.ordering = {}
+           for item, price in self.menu():
+               frame - tk.frame (self.menu)
+               frame.place(x=90, y=120)
+               
+               
         
         def confirm_order(): 
             person_name = name_entry.get()
@@ -118,7 +141,7 @@ def take_out_screen():
         
         #create a second window for the menu
         take_out_window = tk.Tk ()
-        take_out_window.geometry ("500x400")
+        take_out_window.geometry ("500x600")
         take_out_window.title("Take Out Menu")
 
         #message to input name for the order
@@ -177,24 +200,10 @@ take_out_button.place (x=275, y=200)
 
 
 
-
-"""
-
-def barista_window():
-    
-    
-    return barista_order_summary
-
-"""
-    
-
-#ttk.button (order_summary_window, text= "confirm order", order_summary_window.destroy)
-
         
     
     
 #mainloop() to launch the window.
-
 window.mainloop()
 
 
